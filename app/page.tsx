@@ -13,11 +13,11 @@ const items = [
   {
     icon: <WifiIcon fontSize="large" />,
     title: "안정적인 연결",
-    desc: "와이파이 제공 · 비밀번호는 현장에 문의해주세요",
+    desc: "와이파이 제공 · 비밀번호는 현장에서 문의해주세요",
   },
   {
     icon: <CoffeeMakerIcon fontSize="large" />,
-    title: "바로 쓰는 탕비",
+    title: "바로 쓰는 탕비실(사실 셀프바)",
     desc: "커피와 물은 셀프 이용이에요 ☕️",
   },
   {
@@ -27,8 +27,8 @@ const items = [
   },
   {
     icon: <LibraryMusicIcon fontSize="large" />,
-    title: "분위기 선택",
-    desc: "브금 ON 가능 · 밴드용 앰프도 있어요",
+    title: "세계 최고의 무드조성",
+    desc: "브금 ON 가능 · 밴드용 앰프와 믹서도 있어요",
   },
 ];
 
@@ -139,7 +139,7 @@ export default function Home() {
       </Box>
 
       {/* Content */}
-      <Section eyebrow="사용 정보" title="누가, 언제 사용할 수 있나요?">
+      <Section eyebrow="Usage" title="누가, 언제 사용할 수 있나요?">
         <Box>
           <Typography variant="body1">
             정의교회 청년부라면 누구나, 언제든지 사용할 수 있어요
@@ -149,7 +149,7 @@ export default function Home() {
         <Box sx={{ mt: 2 }}>
           <ol>
             <li>출입대장에 대표자가 사용기록을 써주세요</li>
-            <li>화분에 물주기 체크가 안되어있다면, 물을 주세요</li>
+            <li>화분 흙이 말라가고 있다면, 물을 주세요</li>
             <li>커피 및 다과는 셀프바를 이용해주세요😆</li>
           </ol>
         </Box>
@@ -195,75 +195,96 @@ export default function Home() {
         </Box>
       </Section>
 
-      <Box sx={{ backgroundColor: "#b8b8b8" }}>
+      <Box sx={{ backgroundColor: "rgb(229, 231, 229)" }}>
         <Section
           // eyebrow="너가 뭘 좋아할지 몰라서..."
           title="뭐가 있어요!?"
           desc="너가 뭘 좋아할지 몰라서...다 준비해봤어..."
         >
-          {/* <Box>
-            <Box sx={{ width: "100%", height: "auto" }}>test</Box>
+          <Grid container spacing={4}>
+            {items.map((item) => (
+              <Grid size={{ xs: 12, md: 6 }} key={item.title}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: 2,
+                    alignItems: "flex-start",
+                    p: 3,
+                    borderRadius: 4,
+                    bgcolor: "rgba(255,255,255,0.6)",
+                    backdropFilter: "blur(6px)",
+                    border: "1px solid rgba(0,0,0,0.06)",
+                  }}
+                >
+                  <Box sx={{ opacity: 0.7 }}>{item.icon}</Box>
+                  <Box>
+                    <Typography sx={{ fontWeight: 800 }}>
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        mt: 0.5,
+                        color: "text.secondary",
+                        wordBreak: "keep-all",
+                        overflowWrap: "break-word",
+                      }}
+                    >
+                      {item.desc}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Section>
+      </Box>
+
+      <Box>
+        <Section eyebrow="대충만든 도면" title="어떻게 생겼어요?">
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              // aspectRatio: "5/4",
+              borderRadius: 2,
+              overflow: "hidden",
+              // backgroundColor: "red", // dev test color
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <Box
               sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                mt: 4,
+                position: "relative",
+                width: { xs: "100%", md: "60%" },
+                aspectRatio: "5/4",
+                // height: "100%",
               }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <WifiIcon sx={{ fontSize: { xs: 36, md: 120 } }} />
-                <Typography>Free Wifi</Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <CoffeeMakerIcon sx={{ fontSize: { xs: 36, md: 120 } }} />
-                <Typography>캡슐커피머신</Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <MonitorIcon sx={{ fontSize: { xs: 36, md: 120 } }} />
-                <Typography>모니터 2대</Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <LibraryMusicIcon sx={{ fontSize: { xs: 36, md: 120 } }} />
-                <Typography>브금용 스피커</Typography>
-              </Box>
+              <Image
+                src="/map.png"
+                alt="drowing map"
+                fill
+                style={{ objectFit: "contain" }}
+                priority
+                unoptimized
+              />
             </Box>
+          </Box>
+        </Section>
 
-            <Box sx={{ mt: 4 }}>
-              <ul>
-                <li>
-                  와이파이 이름, 비밀번호는 물어봐주세요!
-                  <ul>
-                    <li>교역자나...옆사람에게...!</li>
-                  </ul>
-                </li>
-                <li>모니터, 스피커는 어느 순간 없어질 수도 있어요</li>
-              </ul>
-            </Box>
-          </Box> */}
+        <Section eyebrow="Contact us" title="궁금한 게 있어요!">
+          <Box sx={{ mb: -8 }}>
+            <Typography>
+              중요한 문제라면 ▶ 담당 교역자 or 청년부 목사님께 문의
+            </Typography>
+            <Typography>
+              그정도는 아니라면 ▶ 2청년부 명하준에게 연락해주세요
+            </Typography>
+            <Typography variant="body2">
+              연락처요? 모르면 안타깝죠 머...
+            </Typography>
+          </Box>
         </Section>
       </Box>
     </>
