@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpeg",
         width: 1200,
         height: 630,
         alt: "정청아지트",
