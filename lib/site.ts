@@ -5,6 +5,6 @@ export const site = {
   url: "https://foo.web.app/",
   nav: [
     { href: "/", label: "Home", isReady: true },
-    { href: "/manual", label: "Manual", isReady: false },
+    // { href: "/manual", label: "Manual", isReady: false },
   ],
 };

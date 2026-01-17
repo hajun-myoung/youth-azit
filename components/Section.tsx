@@ -16,8 +16,12 @@ export default function Section(props: {
       }}
     >
       <Container maxWidth="lg">
-        {eyebrow && <Typography variant="overline">{eyebrow}</Typography>}
-        <Typography variant="h3" sx={{ fontWeight: 800, mt: 1 }}>
+        {eyebrow && (
+          <Typography variant="overline" sx={{ fontSize: 20 }}>
+            {eyebrow}
+          </Typography>
+        )}
+        <Typography variant="h3" sx={{ fontWeight: 800, mt: 0 }}>
           {title}
         </Typography>
         {desc && (
