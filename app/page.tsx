@@ -28,17 +28,15 @@ export default function Home() {
           priority
           style={{ objectFit: "cover" }}
         />
-
         {/* overlay darker */}
         <Box
           sx={{
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.22) 45%, rgba(0,0,0,0.55) 100%)",
+              "linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.22) 10%, rgba(0,0,0,0.55) 50%)",
           }}
         />
-
         {/* overlay top text */}
         {/* center content */}
         <Container
@@ -76,6 +74,38 @@ export default function Home() {
           >
             정의마루 1층에 새로 생긴, 청년부를 위한 아-지트
           </Typography>
+
+          {/* bottom logos */}
+          <Box
+            sx={{
+              mt: { xs: 24, md: 32 },
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              gap: { xs: 2, md: 4 },
+              color: "rgba(255,255,255,0.75)",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              variant="body2"
+              sx={{ fontWeight: 700, letterSpacing: "0.02em" }}
+            >
+              Powered by{" "}
+            </Typography>
+            <Image
+              src="/church_logo-bgwhite.png"
+              alt="church logo pgn"
+              width={32}
+              height={36}
+            />
+            <Typography
+              variant="body2"
+              sx={{ fontWeight: 700, letterSpacing: "0.02em" }}
+            >
+              높은뜻정의교회
+            </Typography>
+          </Box>
         </Container>
       </Box>
     </>
