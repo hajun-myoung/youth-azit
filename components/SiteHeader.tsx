@@ -64,6 +64,12 @@ export default function SiteHeader() {
                 key={item.href}
                 component={Link}
                 href={item.href}
+                onClick={(e) => {
+                  if (!item.isReady) {
+                    e.preventDefault();
+                    alert("아직 준비되지 않은 기능입니다");
+                  }
+                }}
                 color="inherit"
                 sx={{
                   textTransform: "none",
