@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   AppBar,
   Box,
@@ -21,6 +22,12 @@ export default function SiteHeader() {
             display: "flex",
             alignItems: "center",
             gap: 2,
+            backgroundColor: "#FFF",
+            pt: 4,
+            pb: 2,
+            px: 1,
+            borderRadius: "0px 0px 20px 20px",
+            // border: "1px black solid",
           }}
         >
           {/* Home */}
@@ -32,9 +39,17 @@ export default function SiteHeader() {
               gap: 1,
             }}
           >
-            <Typography component={Link} href="/" variant="h6">
+            <Box sx={{ width: "120px" }} component={Link} href="/">
+              <Image
+                src="/banner.png"
+                alt="Appbar Logo to HomePage"
+                width={175}
+                height={40}
+              />
+            </Box>
+            {/* <Typography component={Link} href="/" variant="h6">
               {site.name}
-            </Typography>
+            </Typography> */}
           </Box>
 
           {/* others */}
@@ -54,7 +69,7 @@ export default function SiteHeader() {
                   textTransform: "none",
                 }}
               >
-                {item.label}
+                <Typography sx={{ fontSize: 18 }}>{item.label}</Typography>
               </Button>
             ))}
           </Box>

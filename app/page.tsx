@@ -17,7 +17,7 @@ export default function Home() {
           overflow: "hidden",
           borderRadius: { xs: 0, md: 3 },
           mx: { xs: 0, md: 3 },
-          mt: { xs: 0, md: 3 },
+          mt: { xs: 0, md: -9 },
           minHeight: { xs: "100vh", md: "calc(100vh - 48px)" },
         }}
       >
